@@ -59,7 +59,7 @@ int main() {
     
     pop(&fila); 
    
-    imprimir(fila); // aqui é passado o ponteiro que representa a fila pois tem acesso a todos os valores apartir do primeiro
+    imprimir(fila); 
 
     return 0;
 }
