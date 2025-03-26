@@ -22,4 +22,4 @@ Tecnologias Utilizadas
 
 📌 Compilador: GCC
 
-🛠️ Ambiente: Ubuntu / WSL
+🛠️ Ambiente: Ubuntu / WSL# Gerencia-Tarefas

@@ -13,22 +13,21 @@ struct no * esquerda;
 struct no * direito;
 }No;
 
-No * ptrRaiz = NULL;
+
 
 void addDireita(No* no, int valor);
 
-void criarRAIZ(){
-    if(ptrRaiz != NULL){
-    cout << "Ja existe um no raiz\n";
-    }else{
-
-    ptrRaiz = (No *) malloc(sizeof(No));
+No * criarRAIZ(){
+   
+    No * ptrRaiz = (No *) malloc(sizeof(No));
     cout << "Informe o valor da raiz: \n";
     cin >> ptrRaiz->valor;
 
     ptrRaiz->esquerda = NULL;
     ptrRaiz->direito = NULL;
-    }
+
+    return ptrRaiz;
+    
 }
 
 No * criarNO(){
@@ -84,21 +83,21 @@ void addDireita(No * no,  int valor){
     }
 }
 
-void inserir(){
-    if(ptrRaiz == NULL){
+void inserir(No ** raiz){
+    if(*raiz == NULL){
         No * novo = criarNO();
 
-        ptrRaiz = novo;
+        *raiz = novo;
     }
     else{
         int valor;
         cout << "Informe valor\n";
         cin >> valor;
-        if(ptrRaiz->valor > valor){
-            addEsquerda(ptrRaiz, valor);
+        if((*raiz)->valor > valor){
+            addEsquerda(*raiz, valor);
         }
         else{
-            addDireita(ptrRaiz, valor);
+            addDireita(*raiz, valor);
         }
     }
 }
@@ -172,14 +171,14 @@ No * buscaNaArvore(int numero, No * ptrUmNo){
     
 }
 
-void exibiBusca(){
+void exibiBusca(No * arvore){
 
     int busca;
 
     cout << "\nValor para busca:";
     cin >> busca;
 
-    No * elemento = buscaNaArvore(busca, ptrRaiz);
+    No * elemento = buscaNaArvore(busca, arvore);
 
     if(elemento == NULL){
         cout  << "valor nao encontrado\n";
@@ -191,11 +190,16 @@ void exibiBusca(){
 }
 
 int main() {
-    criarRAIZ();
-    inserir();
-    inserir();
+
+    No * arvore = criarRAIZ();
+
+    inserir(&arvore);
+    inserir(&arvore);
+    inserir(&arvore);
+
+    imprimirInOrder(arvore);
     
-    exibiBusca();
+    exibiBusca(arvore);
 
     return 0;
 }
