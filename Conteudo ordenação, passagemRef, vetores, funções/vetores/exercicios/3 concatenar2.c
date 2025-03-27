@@ -1,7 +1,12 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 
-using namespace std;
+/*
+1) Crie dois vetores de caracteres. 
+Preencha os vetores e em seguida crie um terceiro
+vetor que seja a concatenação dos dois
+primeiros!
+*/
 
 int main() {
     char vetor1[5] = {'E', 's', 't', 'r', 'u'};
@@ -17,11 +22,11 @@ int main() {
     for (int i = 0; i < tamanhoVetor1; i++) {
         vetor3[i] = vetor1[i];
     }
-     for (int i = 0; i < tamanhoVetor2; i++) {
+    for (int i = 0; i < tamanhoVetor2; i++) {
         vetor3[tamanhoVetor1 + i] = vetor2[i];
     }
-       for (int i = 0; i < tamanhoTotal; i++) {
-        cout << vetor3[i] << " ";
+    for (int i = 0; i < tamanhoTotal; i++) {
+        printf("%c ", vetor3[i]);
     }
     return 0;
 }

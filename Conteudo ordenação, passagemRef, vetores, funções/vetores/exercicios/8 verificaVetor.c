@@ -41,44 +41,41 @@
 //     return 0;
 // }
 
-
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+#include <stdbool.h>
 
 // Crie um vetor de inteiros de tamanho 10 e preencha-o com valores informados pelo usuário.
 // Em seguida, peça para o usuário digitar um número e verifique se esse número está presente no vetor. 
-// Exiba uma mensagem indicando se o número foi encontrado ou não.
+// Exiba uma mensagem indicando se o número foi encontrado ou não.
 
-void verificaVetor (int n, int * v){
+void verificaVetor(int n, int *v) {
     bool verifica = false;
 
-    for (int i = 0; i < 10; i++){
-        if (n == v[i]){
+    for (int i = 0; i < 10; i++) {
+        if (n == v[i]) {
             verifica = true;
+            break;
         }
     }
-    if(verifica == false){
-        cout << "elemento nao encontrado";
-    }
-    else{
-        cout << "encontrou.";
+    if (!verifica) {
+        printf("Elemento nao encontrado\n");
+    } else {
+        printf("Elemento encontrado.\n");
     }
 }
- 
+
 int main() {
     int vetor[10];
     int n;
-    cout << "digite 10 numeros inteiros:";
-    for (int i = 0; i < 10; i++){
-        cin >> vetor[i];
+
+    printf("Digite 10 numeros inteiros:\n");
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vetor[i]);
     }
-    cout << "informe o numero que deseja verificar:";
-    cin >> n;
-    
-    verificaVetor(n, &n);
+
+    printf("Informe o numero que deseja verificar: ");
+    scanf("%d", &n);
+
+    verificaVetor(n, vetor); // Passando o vetor correto para a função.
     return 0;
 }
-
-
-
-

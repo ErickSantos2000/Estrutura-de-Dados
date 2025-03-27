@@ -1,8 +1,5 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-using namespace std;
 
 /*
 3) Crie 2 vetores de inteiros com tamanho 5.
@@ -13,8 +10,8 @@ eles. Exemplo:
 */
 
 int main() {
-    char vetor1[5] = {4, 30, 5, 23, 15};
-    char vetor2[5] = {2, 3, 5, 1, 4};
+    int vetor1[5] = {4, 30, 5, 23, 15};
+    int vetor2[5] = {2, 3, 5, 1, 4};
 
     int indice1 = 0; 
     int indice2 = 0;
@@ -22,7 +19,7 @@ int main() {
     for (indice1 = 0; indice1 < 5; indice1++) {
         for(indice2 = 0; indice2 < 5; indice2++){
             if(vetor1[indice1] == vetor2[indice2]){
-                cout << "Vetor1[" << indice1 << "]" << " eh igual a vetor2 ["<< indice2 <<"]\n";
+                printf("Vetor1[%d] eh igual a Vetor2[%d]\n", indice1, indice2);
             }
         }
     }

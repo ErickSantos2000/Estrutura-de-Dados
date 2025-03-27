@@ -8,11 +8,13 @@ int main() {
 
     int vetor[5];
     int acumula = 0;
-    cout << "prencha com 5 numeros inteiros:\n";
-    for (int i = 0; i < 5; i++){
-        cin >> vetor[i];
+
+    printf("Preencha com 5 numeros inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+ 
         acumula = acumula + vetor[i]; 
     }
-    cout << acumula;
+
+    printf("A soma dos elementos do vetor e: %d\n", acumula);
     return 0;
 }

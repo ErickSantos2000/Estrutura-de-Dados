@@ -46,31 +46,33 @@
 
 
 
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
-
-int pares (int n, int *vetor){
+int pares(int n, int *vetor) {
     int cont = 0;
-    for(int i = 0; i < n; i++){
-        if(vetor[i] % 2 == 0){
-            cont ++;
+    for (int i = 0; i < n; i++) {
+        if (vetor[i] % 2 == 0) {
+            cont++;
         }
     }
     return cont;
 }
-int main() {
-    int n = 5;
-    int vetor[5];
 
-    for(int i = 0; i < 5; i++){        
-        cout << "elemento: ";
-        cin  >> vetor[i];
-        
+int main() {
+    int vetor[5];
+    int n = sizeof(vetor) / sizeof(vetor[0]);
+
+    for (int i = 0; i < 5; i++) {
+        printf("elemento: ");
+        scanf("%d", &vetor[i]);
     }
-int resultado = pares(n, vetor);
-cout << resultado;
+
+    int resultado = pares(n, vetor);
+    printf("Quantidade de numeros pares: %d\n", resultado);
+
+    return 0;
 }
+
 
 
 // #include <stdio.h>
