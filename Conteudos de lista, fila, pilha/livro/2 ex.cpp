@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 typedef struct no {
     int valor;
     struct no* prox;
