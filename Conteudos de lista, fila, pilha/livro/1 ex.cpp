@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
 typedef struct no{
     float conteudo;
     struct no * prox;
