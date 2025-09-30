@@ -75,6 +75,7 @@ int main(){
     }
     else{
         cout << "Elemento nao encontrado.";
-    }
+    }
+
     return 0;
 }
